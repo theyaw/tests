@@ -15,7 +15,7 @@ blueprint:
 
   input:
     remote:
-      name: IKEA TRADFRI remote control N2
+      name: Sonos Remote
       description: Select the remote control you wish to use.
       selector:
         device:
