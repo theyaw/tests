@@ -52,16 +52,10 @@ action:
       - conditions:
           - condition: template
             value_template: '{{ trigger.event.data.command == "step" }}'
-          - condition: state
-            entity_id: !input media_player
-            state: "{{ states.media_player.media_player.living_room.attributes.volume_level}}"
         sequence:
           - service: media_player.volume_up
             target:
               entity_id: !input media_player
-            data: {}
-
-
 
       # Long-Press on the dim-up button.
       - conditions:
@@ -74,9 +68,7 @@ action:
                 - service: media_player.volume_up
                   target:
                     entity_id: !input media_player
-                  data:
-                    volume_step_pct: 5
-                    
+                                 
       # Short-Press on the dim-down button.
       - conditions:
           - condition: template
@@ -85,8 +77,7 @@ action:
           - service: media_player.volume_down
             target:
               entity_id: !input media_player
-            data: {}
-
+            
       # Long-Press on the dim-down button.
       - conditions:
           - condition: template
@@ -95,11 +86,10 @@ action:
           - repeat:
               while: []
               sequence:
-                - service: media_player.volume_up
+                - service: media_player.volume_down
                   target:
                     entity_id: !input media_player
-                  data:
-                    volume_step_pct: -5
+                 
 
 
 
