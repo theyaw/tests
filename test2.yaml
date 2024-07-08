@@ -59,7 +59,7 @@ action:
           - service: media_player.volume_up
             target:
               entity_id: !input media_player
-            data:
+            data: {}
 
 
 
@@ -85,7 +85,7 @@ action:
           - service: media_player.volume_down
             target:
               entity_id: !input media_player
-            data:
+            data: {}
 
       # Long-Press on the dim-down button.
       - conditions:
