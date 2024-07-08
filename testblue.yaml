@@ -87,7 +87,7 @@ action:
       # Short-Press on the dim-up button.
       - conditions:
           - condition: template
-            value_template: '{{ trigger.event.data.command == "move_with_on_off" }}'
+            value_template: '{{ trigger.event.data.command == "step_with_on_off" }}'
         sequence: !input dimup_short
 
       # Long-Press on the dim-up button.
@@ -99,7 +99,7 @@ action:
       # Short-Press on the dim-down button.
       - conditions:
           - condition: template
-            value_template: '{{ trigger.event.data.command == "move" }}'
+            value_template: '{{ trigger.event.data.command == "step" }}'
         sequence: !input dimdown_short
 
       # Long-Press on the dim-down button.
